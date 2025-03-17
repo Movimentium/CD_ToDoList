@@ -1,10 +1,6 @@
-//
 //  ContentView.swift
 //  CD_ToDoList
-//
 //  Created by Miguel Gallego on 17/3/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {

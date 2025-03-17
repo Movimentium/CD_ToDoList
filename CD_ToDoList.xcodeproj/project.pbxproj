@@ -12,6 +12,7 @@
 		0CBC75B52D88DECF00C68839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBC75B42D88DECF00C68839 /* Assets.xcassets */; };
 		0CBC75B82D88DECF00C68839 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBC75B72D88DECF00C68839 /* Preview Assets.xcassets */; };
 		0CBC75BF2D88DF3000C68839 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0CBC75BE2D88DF3000C68839 /* README.md */; };
+		0CBC75C22D88DFB700C68839 /* CDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C02D88DFB700C68839 /* CDModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		0CBC75B42D88DECF00C68839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CBC75B72D88DECF00C68839 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0CBC75BE2D88DF3000C68839 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0CBC75C12D88DFB700C68839 /* CDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				0CBC75B02D88DECD00C68839 /* CD_ToDoListApp.swift */,
 				0CBC75B22D88DECD00C68839 /* ContentView.swift */,
+				0CBC75C02D88DFB700C68839 /* CDModel.xcdatamodeld */,
 				0CBC75B42D88DECF00C68839 /* Assets.xcassets */,
 				0CBC75B62D88DECF00C68839 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBC75B32D88DECD00C68839 /* ContentView.swift in Sources */,
+				0CBC75C22D88DFB700C68839 /* CDModel.xcdatamodeld in Sources */,
 				0CBC75B12D88DECD00C68839 /* CD_ToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +352,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0CBC75C02D88DFB700C68839 /* CDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0CBC75C12D88DFB700C68839 /* CDModel.xcdatamodel */,
+			);
+			currentVersion = 0CBC75C12D88DFB700C68839 /* CDModel.xcdatamodel */;
+			path = CDModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0CBC75A52D88DECD00C68839 /* Project object */;
 }
