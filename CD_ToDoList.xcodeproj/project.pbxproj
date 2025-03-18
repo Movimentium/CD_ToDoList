@@ -8,25 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0CBC75B12D88DECD00C68839 /* CD_ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75B02D88DECD00C68839 /* CD_ToDoListApp.swift */; };
-		0CBC75B32D88DECD00C68839 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75B22D88DECD00C68839 /* ContentView.swift */; };
+		0CBC75B32D88DECD00C68839 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75B22D88DECD00C68839 /* TodoListView.swift */; };
 		0CBC75B52D88DECF00C68839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBC75B42D88DECF00C68839 /* Assets.xcassets */; };
 		0CBC75B82D88DECF00C68839 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBC75B72D88DECF00C68839 /* Preview Assets.xcassets */; };
 		0CBC75BF2D88DF3000C68839 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0CBC75BE2D88DF3000C68839 /* README.md */; };
 		0CBC75C22D88DFB700C68839 /* CDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C02D88DFB700C68839 /* CDModel.xcdatamodeld */; };
 		0CBC75C42D88E13E00C68839 /* CDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C32D88E13E00C68839 /* CDProvider.swift */; };
 		0CBC75C72D88E91600C68839 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C62D88E91600C68839 /* String_Extension.swift */; };
+		0CBC75C92D88EFDB00C68839 /* TodoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C82D88EFDB00C68839 /* TodoCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0CBC75AD2D88DECD00C68839 /* CD_ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CD_ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBC75B02D88DECD00C68839 /* CD_ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD_ToDoListApp.swift; sourceTree = "<group>"; };
-		0CBC75B22D88DECD00C68839 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0CBC75B22D88DECD00C68839 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		0CBC75B42D88DECF00C68839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CBC75B72D88DECF00C68839 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0CBC75BE2D88DF3000C68839 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0CBC75C12D88DFB700C68839 /* CDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDModel.xcdatamodel; sourceTree = "<group>"; };
 		0CBC75C32D88E13E00C68839 /* CDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider.swift; sourceTree = "<group>"; };
 		0CBC75C62D88E91600C68839 /* String_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
+		0CBC75C82D88EFDB00C68839 /* TodoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				0CBC75B02D88DECD00C68839 /* CD_ToDoListApp.swift */,
-				0CBC75B22D88DECD00C68839 /* ContentView.swift */,
+				0CBC75B22D88DECD00C68839 /* TodoListView.swift */,
+				0CBC75C82D88EFDB00C68839 /* TodoCellView.swift */,
 				0CBC75C32D88E13E00C68839 /* CDProvider.swift */,
 				0CBC75C52D88E90000C68839 /* Extensions */,
 				0CBC75C02D88DFB700C68839 /* CDModel.xcdatamodeld */,
@@ -158,10 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CBC75B32D88DECD00C68839 /* ContentView.swift in Sources */,
+				0CBC75B32D88DECD00C68839 /* TodoListView.swift in Sources */,
 				0CBC75C42D88E13E00C68839 /* CDProvider.swift in Sources */,
 				0CBC75C22D88DFB700C68839 /* CDModel.xcdatamodeld in Sources */,
 				0CBC75B12D88DECD00C68839 /* CD_ToDoListApp.swift in Sources */,
+				0CBC75C92D88EFDB00C68839 /* TodoCellView.swift in Sources */,
 				0CBC75C72D88E91600C68839 /* String_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

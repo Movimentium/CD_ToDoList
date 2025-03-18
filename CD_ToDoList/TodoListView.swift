@@ -1,9 +1,9 @@
-//  ContentView.swift
+//  TodoListView.swift
 //  CD_ToDoList
 //  Created by Miguel Gallego on 17/3/25.
 import SwiftUI
 
-struct ContentView: View {
+struct TodoListView: View {
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<CDTodoItem>
     @State private var title: String = ""
@@ -22,13 +22,21 @@ struct ContentView: View {
                     }
                 List {
                     Section("Pending") {
-                        ForEach(pendingTodoItems) { todoItem in
-                            Text(todoItem.title ?? "")
+                        if pendingTodoItems.isEmpty {
+                            ContentUnavailableView("No items", systemImage: "doc")
+                        } else {
+                            ForEach(pendingTodoItems) { todoItem in
+                                TodoCellView(todoItem: todoItem, onChanged: update(todoItem:))
+                            }
                         }
                     }
                     Section("Completed") {
-                        ForEach(completedTodoItems) { todoItem in
-                            Text(todoItem.title ?? "")
+                        if completedTodoItems.isEmpty {
+                            ContentUnavailableView("No items", systemImage: "doc")
+                        } else {
+                            ForEach(completedTodoItems) { todoItem in
+                                TodoCellView(todoItem: todoItem, onChanged: update(todoItem:))
+                            }
                         }
                     }
                 }
@@ -64,9 +72,16 @@ struct ContentView: View {
         todoItems.filter { $0.isCompleted }
     }
 
+    private func update(todoItem: CDTodoItem) {
+        do {
+            try moc.save()
+        } catch {
+            print(error)
+        }
+    }
 }
 
 #Preview {
-    ContentView()
+    TodoListView()
         .environment(\.managedObjectContext, CDProvider.previewInstance.moc)
 }

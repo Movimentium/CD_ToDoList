@@ -11,7 +11,7 @@ struct CD_ToDoListApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TodoListView()
                 .environment(\.managedObjectContext, provider.moc)
         }
     }
