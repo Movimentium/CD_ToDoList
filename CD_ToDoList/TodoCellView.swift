@@ -5,14 +5,14 @@ import SwiftUI
 
 struct TodoCellView: View {
     let todoItem: CDTodoItem
-    let onChanged: (CDTodoItem) -> ()
+    let onChanged: () -> Void
     
     var body: some View {
         HStack {
             Image(systemName: todoItem.isCompleted ? "checkmark.square" : "square")
                 .onTapGesture {
                     todoItem.isCompleted.toggle()
-                    onChanged(todoItem)
+                    onChanged()
                 }
             if todoItem.isCompleted {
                 Text(todoItem.title ?? "")
@@ -23,7 +23,7 @@ struct TodoCellView: View {
                     todoItem.title = newValue
                 }))
                 .onSubmit {
-                    onChanged(todoItem)
+                    onChanged()
                 }
             }
         }
@@ -32,5 +32,5 @@ struct TodoCellView: View {
 
 #Preview {
     TodoCellView(todoItem: CDProvider.todoItemTest,
-                 onChanged: {_ in })
+                 onChanged: { })
 }

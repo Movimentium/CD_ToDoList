@@ -2,6 +2,7 @@
 //  CD_ToDoList
 //  Created by Miguel Gallego on 18/3/25.
 import Foundation
+import SwiftUI
 import CoreData
 
 class CDProvider {
@@ -26,8 +27,33 @@ class CDProvider {
             }
         }
         
-        #if DEBUG
-        
-        #endif
+#if DEBUG
+        addMocks()
+#endif
     }
+    
+#if DEBUG
+    private func addMocks() {
+        @AppStorage("areMocksAdded") var areMocksAdded = false
+        if areMocksAdded {
+            return
+        }
+        
+        let item0 = CDTodoItem(context: moc)
+        item0.title = "Limpiar el coche"
+        
+        let item1 = CDTodoItem(context: moc)
+        item1.title = "Cortar el cesped"
+
+        let item2 = CDTodoItem(context: moc)
+        item2.title = "Tirar la basura"
+        
+        let item3 = CDTodoItem(context: moc)
+        item3.title = "Hacer la compra"
+        
+        try? moc.save()
+        areMocksAdded = true 
+    }
+#endif
+
 }

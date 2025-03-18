@@ -26,7 +26,7 @@ struct TodoListView: View {
                             ContentUnavailableView("No items", systemImage: "doc")
                         } else {
                             ForEach(pendingTodoItems) { todoItem in
-                                TodoCellView(todoItem: todoItem, onChanged: update(todoItem:))
+                                TodoCellView(todoItem: todoItem, onChanged: update)
                             }
                             .onDelete(perform: { indexSet in
                                 indexSet.forEach { idx in
@@ -42,7 +42,7 @@ struct TodoListView: View {
                             ContentUnavailableView("No items", systemImage: "doc")
                         } else {
                             ForEach(completedTodoItems) { todoItem in
-                                TodoCellView(todoItem: todoItem, onChanged: update(todoItem:))
+                                TodoCellView(todoItem: todoItem, onChanged: update)
                             }
                             .onDelete(perform: { indexSet in
                                 indexSet.forEach { idx in
@@ -86,7 +86,7 @@ struct TodoListView: View {
         todoItems.filter { $0.isCompleted }
     }
 
-    private func update(todoItem: CDTodoItem) {
+    private func update() {
         save()
     }
     
