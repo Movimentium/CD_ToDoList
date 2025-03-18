@@ -4,17 +4,69 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var moc
+    @FetchRequest(sortDescriptors: []) private var todoItems: FetchedResults<CDTodoItem>
+    @State private var title: String = ""
+    
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                TextField("Title", text: $title)
+                    .textFieldStyle(.roundedBorder)
+                    .onSubmit {
+                        if isFormValid {
+                            saveTodoItem(title: title)
+                            title = ""
+                        }
+                    }
+                List {
+                    Section("Pending") {
+                        ForEach(pendingTodoItems) { todoItem in
+                            Text(todoItem.title ?? "")
+                        }
+                    }
+                    Section("Completed") {
+                        ForEach(completedTodoItems) { todoItem in
+                            Text(todoItem.title ?? "")
+                        }
+                    }
+                }
+                .listStyle(.plain)
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("To Do List")
         }
-        .padding()
     }
+    
+    
+    // MARK: - Logic
+    private var isFormValid: Bool {
+        !title.isEmptyOrWhiteSpace
+    }
+    
+    private func saveTodoItem(title: String) {
+        let todoItem = CDTodoItem(context: moc)
+        todoItem.title = title
+        do {
+            try moc.save()
+        } catch {
+            print(error)
+        }
+    }
+    
+    private var pendingTodoItems: [CDTodoItem] {
+        todoItems.filter { !$0.isCompleted }
+    }
+    
+    private var completedTodoItems: [CDTodoItem] {
+        todoItems.filter { $0.isCompleted }
+    }
+
 }
 
 #Preview {
     ContentView()
+        .environment(\.managedObjectContext, CDProvider.previewInstance.moc)
 }

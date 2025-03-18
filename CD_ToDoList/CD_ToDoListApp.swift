@@ -6,9 +6,13 @@ import SwiftUI
 
 @main
 struct CD_ToDoListApp: App {
+    
+    let provider = CDProvider()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, provider.moc)
         }
     }
 }

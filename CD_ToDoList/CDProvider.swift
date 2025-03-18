@@ -34,6 +34,7 @@ class CDProvider {
         for i in 1..<10 {
             let todoItem = CDTodoItem(context: provider.moc)
             todoItem.title = "Todo item \(i)"
+            todoItem.isCompleted = i.isMultiple(of: 2)
         }
         
         do {
