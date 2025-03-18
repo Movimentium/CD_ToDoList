@@ -16,6 +16,7 @@
 		0CBC75C42D88E13E00C68839 /* CDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C32D88E13E00C68839 /* CDProvider.swift */; };
 		0CBC75C72D88E91600C68839 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C62D88E91600C68839 /* String_Extension.swift */; };
 		0CBC75C92D88EFDB00C68839 /* TodoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75C82D88EFDB00C68839 /* TodoCellView.swift */; };
+		0CBC75CB2D88FAC000C68839 /* CDProvider_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC75CA2D88FAC000C68839 /* CDProvider_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0CBC75C32D88E13E00C68839 /* CDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider.swift; sourceTree = "<group>"; };
 		0CBC75C62D88E91600C68839 /* String_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
 		0CBC75C82D88EFDB00C68839 /* TodoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCellView.swift; sourceTree = "<group>"; };
+		0CBC75CA2D88FAC000C68839 /* CDProvider_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider_Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		0CBC75B62D88DECF00C68839 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				0CBC75CA2D88FAC000C68839 /* CDProvider_Extension.swift */,
 				0CBC75B72D88DECF00C68839 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -164,6 +167,7 @@
 				0CBC75B32D88DECD00C68839 /* TodoListView.swift in Sources */,
 				0CBC75C42D88E13E00C68839 /* CDProvider.swift in Sources */,
 				0CBC75C22D88DFB700C68839 /* CDModel.xcdatamodeld in Sources */,
+				0CBC75CB2D88FAC000C68839 /* CDProvider_Extension.swift in Sources */,
 				0CBC75B12D88DECD00C68839 /* CD_ToDoListApp.swift in Sources */,
 				0CBC75C92D88EFDB00C68839 /* TodoCellView.swift in Sources */,
 				0CBC75C72D88E91600C68839 /* String_Extension.swift in Sources */,

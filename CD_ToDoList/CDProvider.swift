@@ -25,25 +25,9 @@ class CDProvider {
                 fatalError("Core Data store failed to initialize: \(error)")
             }
         }
+        
+        #if DEBUG
+        
+        #endif
     }
-    
-    // MARK: - For Preview
-    
-    static var previewInstance: CDProvider = {
-        let provider = CDProvider(isForPreview: true)
-        for i in 1..<10 {
-            let todoItem = CDTodoItem(context: provider.moc)
-            todoItem.title = "Todo item \(i)"
-            todoItem.isCompleted = i.isMultiple(of: 2)
-        }
-        
-        do {
-            try provider.moc.save()
-        } catch {
-            print(#function, error)
-        }
-        // Alternative: try? provider.moc.safe
-        
-        return provider
-    }()
 }

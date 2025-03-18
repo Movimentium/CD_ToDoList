@@ -30,15 +30,7 @@ struct TodoCellView: View {
     }
 }
 
-// TODO: poner esto en Preview Content folder
-private var todoItem: CDTodoItem = {
-    let item =  CDTodoItem(context: CDProvider.previewInstance.moc)
-    item.title = "Pedir una pizza"
-    item.isCompleted = false
-    return item
-}()
-
 #Preview {
-    TodoCellView(todoItem: todoItem,
+    TodoCellView(todoItem: CDProvider.todoItemTest,
                  onChanged: {_ in })
 }

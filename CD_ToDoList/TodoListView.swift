@@ -28,6 +28,13 @@ struct TodoListView: View {
                             ForEach(pendingTodoItems) { todoItem in
                                 TodoCellView(todoItem: todoItem, onChanged: update(todoItem:))
                             }
+                            .onDelete(perform: { indexSet in
+                                indexSet.forEach { idx in
+                                    print("Pending idx:", idx)
+                                    let todoItem = pendingTodoItems[idx]
+                                    delete(todoItem: todoItem)
+                                }
+                            })
                         }
                     }
                     Section("Completed") {
@@ -37,6 +44,13 @@ struct TodoListView: View {
                             ForEach(completedTodoItems) { todoItem in
                                 TodoCellView(todoItem: todoItem, onChanged: update(todoItem:))
                             }
+                            .onDelete(perform: { indexSet in
+                                indexSet.forEach { idx in
+                                    print("Completed idx:", idx)
+                                    let todoItem = completedTodoItems[idx]
+                                    delete(todoItem: todoItem)
+                                }
+                            })
                         }
                     }
                 }
@@ -73,6 +87,15 @@ struct TodoListView: View {
     }
 
     private func update(todoItem: CDTodoItem) {
+        save()
+    }
+    
+    private func delete(todoItem: CDTodoItem) {
+        moc.delete(todoItem)
+        save()
+    }
+    
+    private func save() {
         do {
             try moc.save()
         } catch {
